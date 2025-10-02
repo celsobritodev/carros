@@ -1,12 +1,17 @@
 package app.controller;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 
@@ -15,9 +20,10 @@ import app.service.CarroService;
 
 @Controller
 @RequestMapping("/carro")
+@CrossOrigin("*") // tambem poderia ser assim @CrossOrigin("http://localhost:4200")
 public class CarroController {
 	
-	@Autowired
+	@Autowired 
 	private CarroService carroService;
 	
 	
@@ -34,6 +40,27 @@ public class CarroController {
 		
 	}
 	
+	@PutMapping("/update/{id}")
+	public ResponseEntity<String> update(@PathVariable Long id, @RequestBody Carro carroAtualizado) {
+	    try {
+	        String mensagem = this.carroService.update(id, carroAtualizado);
+	        return new ResponseEntity<String>(mensagem, HttpStatus.OK);
+	    } catch (Exception e) {
+	        return new ResponseEntity<String>("Deu algo errado ao atualizar: " + e.getMessage(), HttpStatus.BAD_REQUEST);
+	    }
+	}
+	
+	
+	@GetMapping("/listAll")
+	public ResponseEntity<List<Carro>> listAll() {
+		try {
+			List<Carro> lista = this.carroService.listAll();
+			return new ResponseEntity<>(lista,HttpStatus.OK);
+		} catch (Exception e) {
+			return new ResponseEntity<>(null, HttpStatus.BAD_REQUEST);
+		}
+		
+	}
 	
 	@GetMapping("/findById/{id}")
 	public ResponseEntity<Carro> findById(@PathVariable Long id) {
@@ -44,6 +71,18 @@ public class CarroController {
 		} catch (Exception e) {
 			return new ResponseEntity<>(null, HttpStatus.BAD_REQUEST);
 		}
+	}
+	
+	
+	@DeleteMapping("/delete/{idCarro}")
+	public ResponseEntity<String> delete(@PathVariable long idCarro) {
+		try {
+			String mensagem = this.carroService.delete(idCarro);
+			return new ResponseEntity<>(mensagem,HttpStatus.OK);
+		} catch (Exception e) {
+			return new ResponseEntity<String>("Deu este erro: "+e.getMessage(),HttpStatus.INTERNAL_SERVER_ERROR);
+		}
+		
 	}
 	
 }
