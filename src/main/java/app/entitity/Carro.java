@@ -1,5 +1,6 @@
 package app.entitity;
 
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -21,13 +22,18 @@ public class Carro {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
     
-
+    private int ano;
+    
     @NotNull(message = "Nome não pode ser nulo")
 	private String nome;
     
+
+    private int marca_id;
     
 	private String marca;
 	private String modelo;
+
+	@Column(name="ano_fabricacao")
 	private int anoFabricacao;
 	
 

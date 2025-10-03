@@ -15,12 +15,19 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import org.springframework.web.bind.annotation.RequestMethod;
+
 import app.entitity.Carro;
 import app.service.CarroService;
 
 @Controller
-@RequestMapping("/carro")
-@CrossOrigin("*") // tambem poderia ser assim @CrossOrigin("http://localhost:4200")
+@RequestMapping("/api/carro")
+//@CrossOrigin("*") // tambem poderia ser assim @CrossOrigin("http://localhost:4200")
+@CrossOrigin(origins = "http://localhost:4200", 
+             allowedHeaders = "*",
+             methods = {RequestMethod.GET, RequestMethod.POST, RequestMethod.PUT, 
+             RequestMethod.DELETE, RequestMethod.OPTIONS})
+
 public class CarroController {
 	
 	@Autowired 

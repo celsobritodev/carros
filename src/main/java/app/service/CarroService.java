@@ -30,21 +30,52 @@ public class CarroService {
 
 
    public String delete(long idCarro) {
-	// TODO Auto-generated method stub
-	return null;
-   }
-
+		try {
+			// Verifica se o carro existe antes de deletar
+			if (carroRepository.existsById(idCarro)) {
+				carroRepository.deleteById(idCarro);
+				return "Carro deletado com sucesso!";
+			} else {
+				return "Carro não encontrado!";
+			}
+		} catch (Exception e) {
+			return "Erro ao deletar carro: " + e.getMessage();
+		}
+	}
+   
+   
+   
 
    public String update(Long id, Carro carroAtualizado) {
-	// TODO Auto-generated method stub
-	return null;
-   }
+		try {
+			// Busca o carro existente pelo ID
+			Optional<Carro> carroOptional = carroRepository.findById(id);
+			
+			if (carroOptional.isPresent()) {
+				Carro carroExistente = carroOptional.get();
+				
+				// Atualiza os campos do carro existente com os novos valores
+				carroExistente.setMarca(carroAtualizado.getMarca());
+				carroExistente.setModelo(carroAtualizado.getModelo());
+				
+				// Adicione outros campos conforme necessário
+				
+				// Salva as alterações
+				carroRepository.save(carroExistente);
+				return "Carro atualizado com sucesso!";
+			} else {
+				return "Carro não encontrado!";
+			}
+		} catch (Exception e) {
+			return "Erro ao atualizar carro: " + e.getMessage();
+		}
+	}
 
 
    public List<Carro> listAll() {
-	// TODO Auto-generated method stub
-	return null;
-   }
+		// Retorna todos os carros do banco de dados
+		return carroRepository.findAll();
+	}
    
    
 }
