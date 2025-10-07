@@ -22,19 +22,19 @@ public class Carro {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
     
-    private int ano;
+    private Integer ano;
     
     @NotNull(message = "Nome não pode ser nulo")
 	private String nome;
     
 
-    private int marca_id;
+    private Integer marca_id;
     
 	private String marca;
 	private String modelo;
 
 	@Column(name="ano_fabricacao")
-	private int anoFabricacao;
+	private Integer anoFabricacao;
 	
 
 
