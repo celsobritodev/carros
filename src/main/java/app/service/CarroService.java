@@ -57,6 +57,7 @@ public class CarroService {
 				// Atualiza os campos do carro existente com os novos valores
 				carroExistente.setMarca(carroAtualizado.getMarca());
 				carroExistente.setModelo(carroAtualizado.getModelo());
+				carroExistente.setNome(carroAtualizado.getNome());
 				
 				// Adicione outros campos conforme necessário
 				
