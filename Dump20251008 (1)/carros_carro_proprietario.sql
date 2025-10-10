@@ -24,11 +24,11 @@ DROP TABLE IF EXISTS `carro_proprietario`;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `carro_proprietario` (
   `carro_id` bigint NOT NULL,
-  `proprietarios_id` bigint NOT NULL,
-  KEY `FKd27usmmfbi9n7d8anfu3etikf` (`proprietarios_id`),
+  `proprietario_id` bigint NOT NULL,
   KEY `FK2uttroqb3mg5ymj4u5q8rnfcb` (`carro_id`),
+  KEY `FKd27usmmfbi9n7d8anfu3etikf` (`proprietario_id`),
   CONSTRAINT `FK2uttroqb3mg5ymj4u5q8rnfcb` FOREIGN KEY (`carro_id`) REFERENCES `carro` (`id`),
-  CONSTRAINT `FKd27usmmfbi9n7d8anfu3etikf` FOREIGN KEY (`proprietarios_id`) REFERENCES `proprietario` (`id`)
+  CONSTRAINT `FKd27usmmfbi9n7d8anfu3etikf` FOREIGN KEY (`proprietario_id`) REFERENCES `proprietario` (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -38,7 +38,7 @@ CREATE TABLE `carro_proprietario` (
 
 LOCK TABLES `carro_proprietario` WRITE;
 /*!40000 ALTER TABLE `carro_proprietario` DISABLE KEYS */;
-INSERT INTO `carro_proprietario` VALUES (2,1),(2,2);
+INSERT INTO `carro_proprietario` VALUES (2,1),(2,2),(50,3),(50,4);
 /*!40000 ALTER TABLE `carro_proprietario` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -51,4 +51,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2025-10-08 19:33:19
+-- Dump completed on 2025-10-10  9:02:15

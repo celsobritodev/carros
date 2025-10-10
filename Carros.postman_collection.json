@@ -1,0 +1,205 @@
+{
+	"info": {
+		"_postman_id": "9407ee59-aa03-423b-b2b3-64300aff72b6",
+		"name": "Carros",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "22901965"
+	},
+	"item": [
+		{
+			"name": "listAll",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"nome\" : \"Jeep Compass\",\r\n    \"ano\"  : 2000,\r\n    \"modelo\" : \"SUV\"    \r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:8080/api/carro/listAll"
+			},
+			"response": []
+		},
+		{
+			"name": "MarcalistAll",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"nome\" : \"Jeep Compass\",\r\n    \"ano\"  : 2000,\r\n    \"modelo\" : \"SUV\"    \r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:8080/api/marca/listAll"
+			},
+			"response": []
+		},
+		{
+			"name": "findByNome",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"nome\" : \"Jeep Compass\",\r\n    \"ano\"  : 2000,\r\n    \"modelo\" : \"SUV\"    \r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/carro/findByNome?nome=camarote",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"carro",
+						"findByNome"
+					],
+					"query": [
+						{
+							"key": "nome",
+							"value": "camarote"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "findByMarca",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"nome\" : \"Jeep Compass\",\r\n    \"ano\"  : 2000,\r\n    \"modelo\" : \"SUV\"    \r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/carro/findByMarca?idMarca=2",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"carro",
+						"findByMarca"
+					],
+					"query": [
+						{
+							"key": "idMarca",
+							"value": "2"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "findAcimaAno",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"nome\" : \"Jeep Compass\",\r\n    \"ano\"  : 2000,\r\n    \"modelo\" : \"SUV\"    \r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/carro/findAcimaAno?ano=2020",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"carro",
+						"findAcimaAno"
+					],
+					"query": [
+						{
+							"key": "ano",
+							"value": "2020"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Carrosave",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\"nome\" : \"Clio\",\r\n\"ano\" : 2011,\r\n\"marca\": {\r\n\r\n    \"nome\": \"Renault\",\r\n    \"cnpj\":\"007883\"\r\n  },\r\n\r\n\"modelo\" : \"hatch\",\r\n\"anoFabricacao\" : 2010,\r\n\"proprietarios\": [\r\n    { \"nome\":\"Celso\",\r\n       \"idade\": 58\r\n    },\r\n     { \"nome\":\"Sandra\",\r\n       \"idade\": 50\r\n    }\r\n]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:8080/api/carro/save"
+			},
+			"response": []
+		},
+		{
+			"name": "Marcasave",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n       \r\n        \"nome\": \"Toyota\",\r\n        \"cnpj\": \"48626482732\",\r\n        \"carros\": []\r\n    }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:8080/api/marca/save"
+			},
+			"response": []
+		}
+	]
+}

@@ -16,28 +16,33 @@
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
--- Table structure for table `saida`
+-- Table structure for table `carro`
 --
 
-DROP TABLE IF EXISTS `saida`;
+DROP TABLE IF EXISTS `carro`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
-CREATE TABLE `saida` (
+CREATE TABLE `carro` (
   `id` bigint NOT NULL AUTO_INCREMENT,
-  `maior_numero` int DEFAULT NULL,
-  `media` double DEFAULT NULL,
-  `soma` int DEFAULT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+  `ano` int NOT NULL,
+  `nome` varchar(255) DEFAULT NULL,
+  `marca_id` bigint DEFAULT NULL,
+  `modelo` varchar(255) DEFAULT NULL,
+  `ano_fabricacao` int NOT NULL,
+  PRIMARY KEY (`id`),
+  KEY `FKrdimwbmemo9p4j5eaf6jws1ss` (`marca_id`),
+  CONSTRAINT `FKrdimwbmemo9p4j5eaf6jws1ss` FOREIGN KEY (`marca_id`) REFERENCES `marca` (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=51 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `saida`
+-- Dumping data for table `carro`
 --
 
-LOCK TABLES `saida` WRITE;
-/*!40000 ALTER TABLE `saida` DISABLE KEYS */;
-/*!40000 ALTER TABLE `saida` ENABLE KEYS */;
+LOCK TABLES `carro` WRITE;
+/*!40000 ALTER TABLE `carro` DISABLE KEYS */;
+INSERT INTO `carro` VALUES (2,2015,'Uno New',2,'2010',2009),(3,2025,'Polo 2006 direção',2,'2025',2025),(5,2010,'corolla',2,'toyota',2009),(6,2020,'nivus',2,'nivus turbo',2019),(9,2013,'preluz',2,'chatota',2005),(10,2004,'xaveko cross',2,'bilogual',2007),(32,2011,'Camaro',2,'hatch',2010),(43,545,'j',2,'hggh',445),(44,999,'jk',2,'jk',99),(45,999,'jk',2,'jk',99),(46,2011,'Camarote',23,'hatch',2010),(47,2011,'Camarote',24,'hatch',2010),(48,2017,'tomatildo',2,'super cross',2013),(49,2011,'Fiesta cde',25,'hatch',2010),(50,2011,'Clio',26,'hatch',2010);
+/*!40000 ALTER TABLE `carro` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
@@ -49,4 +54,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2025-10-08 19:33:19
+-- Dump completed on 2025-10-10  9:02:14

@@ -27,7 +27,7 @@ CREATE TABLE `marca` (
   `cnpj` varchar(255) DEFAULT NULL,
   `nome` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=28 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -36,7 +36,7 @@ CREATE TABLE `marca` (
 
 LOCK TABLES `marca` WRITE;
 /*!40000 ALTER TABLE `marca` DISABLE KEYS */;
-INSERT INTO `marca` VALUES (2,'cnpjfit0001','Fiat');
+INSERT INTO `marca` VALUES (2,'cnpjfit0001','Fiat'),(4,'154443','x1'),(5,'154443','x1'),(6,'154443','x1'),(7,'154443','x1'),(8,'154443','x1'),(9,'154443','x1'),(10,'154443','x1'),(11,'154443','x1'),(12,'154443','x1'),(13,'154443','x1'),(14,'154443','x1'),(15,'154443','x1'),(16,'154443','x1'),(17,'154443','x1'),(23,'154443','x1'),(24,'154443','x1'),(25,'154443','Ford'),(26,'007883','Renault'),(27,'48626482732','Toyota');
 /*!40000 ALTER TABLE `marca` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -49,4 +49,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2025-10-08 19:33:19
+-- Dump completed on 2025-10-10  9:02:14

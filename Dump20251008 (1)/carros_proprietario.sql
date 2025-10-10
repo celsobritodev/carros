@@ -16,26 +16,28 @@
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
--- Table structure for table `entrada`
+-- Table structure for table `proprietario`
 --
 
-DROP TABLE IF EXISTS `entrada`;
+DROP TABLE IF EXISTS `proprietario`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
-CREATE TABLE `entrada` (
+CREATE TABLE `proprietario` (
   `id` bigint NOT NULL AUTO_INCREMENT,
-  `lista` varbinary(255) DEFAULT NULL,
+  `idade` bigint DEFAULT NULL,
+  `nome` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `entrada`
+-- Dumping data for table `proprietario`
 --
 
-LOCK TABLES `entrada` WRITE;
-/*!40000 ALTER TABLE `entrada` DISABLE KEYS */;
-/*!40000 ALTER TABLE `entrada` ENABLE KEYS */;
+LOCK TABLES `proprietario` WRITE;
+/*!40000 ALTER TABLE `proprietario` DISABLE KEYS */;
+INSERT INTO `proprietario` VALUES (1,33,'Wellington'),(2,27,'Elizama'),(3,58,'Celso'),(4,50,'Sandra');
+/*!40000 ALTER TABLE `proprietario` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
@@ -47,4 +49,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2025-10-08 19:33:19
+-- Dump completed on 2025-10-10  9:02:15
