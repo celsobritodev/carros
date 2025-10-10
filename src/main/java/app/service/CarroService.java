@@ -6,6 +6,7 @@ import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import app.entitity.Carro;
+import app.entitity.Marca;
 import app.repository.CarroRepository;
 
 @Service
@@ -42,6 +43,22 @@ public class CarroService {
 			return "Erro ao deletar carro: " + e.getMessage();
 		}
 	}
+   
+   
+   public List<Carro> findByNome(String nome) {
+	   return this.carroRepository.findByNome(nome);
+   }
+   
+   
+   public List<Carro> findByMarca(long idMarca) {
+	   Marca marca = new Marca();
+	   marca.setId(idMarca);
+	   return this.carroRepository.findByMarca(marca);
+   }
+   
+   public List<Carro> findAcimaAno(int ano) {
+	   return this.carroRepository.findAcimaAno(ano);
+   }
    
    
    

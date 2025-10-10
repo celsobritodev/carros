@@ -15,6 +15,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import app.entitity.Carro;
@@ -89,6 +90,40 @@ public class CarroController {
 			return new ResponseEntity<>(mensagem,HttpStatus.OK);
 		} catch (Exception e) {
 			return new ResponseEntity<String>("Deu este erro: "+e.getMessage(),HttpStatus.INTERNAL_SERVER_ERROR);
+		}
+		
+	}
+	
+	
+	@GetMapping("/findByNome")
+	public ResponseEntity<List<Carro>> findByNome(@RequestParam String nome) {
+		try {
+			List<Carro> lista = this.carroService.findByNome(nome);
+			return new ResponseEntity<>(lista,HttpStatus.OK);
+		} catch (Exception e) {
+			return new ResponseEntity<>(null, HttpStatus.BAD_REQUEST);
+		}
+		
+	}
+	
+	@GetMapping("/findAcimaAno")
+	public ResponseEntity<List<Carro>> findAcimaAno(@RequestParam int ano) {
+		try {
+			List<Carro> lista = this.carroService.findAcimaAno(ano);
+			return new ResponseEntity<>(lista,HttpStatus.OK);
+		} catch (Exception e) {
+			return new ResponseEntity<>(null, HttpStatus.BAD_REQUEST);
+		}
+		
+	}
+	
+	@GetMapping("/findByMarca")
+	public ResponseEntity<List<Carro>> findByMarca(@RequestParam long idMarca)  {
+		try {
+			List<Carro> lista = this.carroService.findByMarca(idMarca);
+			return new ResponseEntity<>(lista,HttpStatus.OK);
+		} catch (Exception e) {
+			return new ResponseEntity<>(null, HttpStatus.BAD_REQUEST);
 		}
 		
 	}
