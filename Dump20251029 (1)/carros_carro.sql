@@ -16,29 +16,33 @@
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
--- Table structure for table `carro_proprietario`
+-- Table structure for table `carro`
 --
 
-DROP TABLE IF EXISTS `carro_proprietario`;
+DROP TABLE IF EXISTS `carro`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
-CREATE TABLE `carro_proprietario` (
-  `carro_id` bigint NOT NULL,
-  `proprietario_id` bigint NOT NULL,
-  KEY `FK2uttroqb3mg5ymj4u5q8rnfcb` (`carro_id`),
-  KEY `FKd27usmmfbi9n7d8anfu3etikf` (`proprietario_id`),
-  CONSTRAINT `FK2uttroqb3mg5ymj4u5q8rnfcb` FOREIGN KEY (`carro_id`) REFERENCES `carro` (`id`),
-  CONSTRAINT `FKd27usmmfbi9n7d8anfu3etikf` FOREIGN KEY (`proprietario_id`) REFERENCES `proprietario` (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+CREATE TABLE `carro` (
+  `id` bigint NOT NULL AUTO_INCREMENT,
+  `ano` int NOT NULL,
+  `nome` varchar(255) DEFAULT NULL,
+  `marca_id` bigint DEFAULT NULL,
+  `modelo` varchar(255) DEFAULT NULL,
+  `ano_fabricacao` int NOT NULL,
+  PRIMARY KEY (`id`),
+  KEY `FKrdimwbmemo9p4j5eaf6jws1ss` (`marca_id`),
+  CONSTRAINT `FKrdimwbmemo9p4j5eaf6jws1ss` FOREIGN KEY (`marca_id`) REFERENCES `marca` (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=61 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `carro_proprietario`
+-- Dumping data for table `carro`
 --
 
-LOCK TABLES `carro_proprietario` WRITE;
-/*!40000 ALTER TABLE `carro_proprietario` DISABLE KEYS */;
-/*!40000 ALTER TABLE `carro_proprietario` ENABLE KEYS */;
+LOCK TABLES `carro` WRITE;
+/*!40000 ALTER TABLE `carro` DISABLE KEYS */;
+INSERT INTO `carro` VALUES (5,2010,'corolla',35,'sedan',2009),(6,2020,'nivus',32,'nivus turbo',2019),(32,2011,'Camaro',37,'hatch',2010),(43,545,'Kombi',32,'hggh',445),(44,999,'Fusca',32,'jk',99),(45,999,'Brasilia',32,'jk',99),(55,2010,'Polo',32,'sedan',2010),(56,2015,'C3',36,'HATCH',2003),(57,2020,'Compass',38,'Super',2020),(58,1982,'Uno',2,'Mille',1981),(60,2017,'Tucson',39,'SUV',2016);
+/*!40000 ALTER TABLE `carro` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
@@ -50,4 +54,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2025-10-29 22:34:25
+-- Dump completed on 2025-10-30  9:00:10

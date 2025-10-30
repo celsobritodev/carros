@@ -16,33 +16,28 @@
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
--- Table structure for table `carro`
+-- Table structure for table `proprietario`
 --
 
-DROP TABLE IF EXISTS `carro`;
+DROP TABLE IF EXISTS `proprietario`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
-CREATE TABLE `carro` (
+CREATE TABLE `proprietario` (
   `id` bigint NOT NULL AUTO_INCREMENT,
-  `ano` int NOT NULL,
+  `idade` bigint DEFAULT NULL,
   `nome` varchar(255) DEFAULT NULL,
-  `marca_id` bigint DEFAULT NULL,
-  `modelo` varchar(255) DEFAULT NULL,
-  `ano_fabricacao` int NOT NULL,
-  PRIMARY KEY (`id`),
-  KEY `FKrdimwbmemo9p4j5eaf6jws1ss` (`marca_id`),
-  CONSTRAINT `FKrdimwbmemo9p4j5eaf6jws1ss` FOREIGN KEY (`marca_id`) REFERENCES `marca` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=57 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `carro`
+-- Dumping data for table `proprietario`
 --
 
-LOCK TABLES `carro` WRITE;
-/*!40000 ALTER TABLE `carro` DISABLE KEYS */;
-INSERT INTO `carro` VALUES (5,2010,'corolla',35,'sedan',2009),(6,2020,'nivus',2,'nivus turbo',2019),(32,2011,'Camaro',2,'hatch',2010),(43,545,'Kombi',2,'hggh',445),(44,999,'Fusca',2,'jk',99),(45,999,'Brasilia',2,'jk',99),(55,2010,'Polo',32,'sedan',2010),(56,2015,'C3',36,'HATCH',2003);
-/*!40000 ALTER TABLE `carro` ENABLE KEYS */;
+LOCK TABLES `proprietario` WRITE;
+/*!40000 ALTER TABLE `proprietario` DISABLE KEYS */;
+INSERT INTO `proprietario` VALUES (7,30,'Marina'),(8,26,'Leticia');
+/*!40000 ALTER TABLE `proprietario` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
@@ -54,4 +49,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2025-10-29 22:34:24
+-- Dump completed on 2025-10-30  9:00:10
