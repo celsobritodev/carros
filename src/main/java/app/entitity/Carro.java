@@ -39,15 +39,12 @@ public class Carro {
 
     // um carro pertence a uma marca
     // uma marca pode ter muitos carros
-    @ManyToOne(cascade = CascadeType.ALL) // permite salvar a marca junto com o carro
+    //@ManyToOne(cascade = CascadeType.ALL) // permite salvar a marca junto com o carro
+    @ManyToOne // ← APENAS ISSO, SEM CASCADE
     @JoinColumn(name="marca_id")
     //@JsonBackReference  // // evita o loop infinito  
     @JsonIgnoreProperties("carros")  // ← Evita loop sem impedir serialização
     private Marca marca;
-    
-   // private Integer marca_id;
-    
-//	private String marca;
     
     // um carro pode ter muitos proprietarios
     // um proprietario pode ter muitos carros

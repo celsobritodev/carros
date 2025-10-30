@@ -40,6 +40,14 @@ public class CarroController {
 	public ResponseEntity<String> save(@RequestBody Carro carro) {
 		
 		try {
+			
+			System.out.println("Carro recebido no backend: " + carro);
+	        System.out.println("Marca recebida: " + carro.getMarca());
+	        if (carro.getMarca() != null) {
+	            System.out.println("ID da marca recebida: " + carro.getMarca().getId());
+	        }
+			
+			
 			String mensagem = this.carroService.save(carro);
 			return new ResponseEntity<String>(mensagem,HttpStatus.OK);
 			
