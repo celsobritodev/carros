@@ -7,7 +7,7 @@
 	},
 	"item": [
 		{
-			"name": "listAll",
+			"name": "carroListAll",
 			"protocolProfileBehavior": {
 				"disableBodyPruning": true
 			},
@@ -16,7 +16,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n    \"nome\" : \"Jeep Compass\",\r\n    \"ano\"  : 2000,\r\n    \"modelo\" : \"SUV\"    \r\n}",
+					"raw": "",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -28,7 +28,7 @@
 			"response": []
 		},
 		{
-			"name": "MarcalistAll",
+			"name": "marcaListAll",
 			"protocolProfileBehavior": {
 				"disableBodyPruning": true
 			},
@@ -49,7 +49,7 @@
 			"response": []
 		},
 		{
-			"name": "findByNome",
+			"name": "findByNomeCarro",
 			"protocolProfileBehavior": {
 				"disableBodyPruning": true
 			},
@@ -66,7 +66,7 @@
 					}
 				},
 				"url": {
-					"raw": "http://localhost:8080/api/carro/findByNome?nome=camarote",
+					"raw": "http://localhost:8080/api/carro/findByNome?nome=nivus",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -80,7 +80,7 @@
 					"query": [
 						{
 							"key": "nome",
-							"value": "camarote"
+							"value": "nivus"
 						}
 					]
 				}
@@ -88,7 +88,7 @@
 			"response": []
 		},
 		{
-			"name": "findByMarca",
+			"name": "findByIdMarca",
 			"protocolProfileBehavior": {
 				"disableBodyPruning": true
 			},
@@ -127,7 +127,7 @@
 			"response": []
 		},
 		{
-			"name": "findAcimaAno",
+			"name": "findAcimaAnoCarro",
 			"protocolProfileBehavior": {
 				"disableBodyPruning": true
 			},
@@ -166,13 +166,13 @@
 			"response": []
 		},
 		{
-			"name": "Carrosave",
+			"name": "carroSave",
 			"request": {
 				"method": "POST",
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n\"nome\" : \"Clio\",\r\n\"ano\" : 2011,\r\n\"marca\": {\r\n\r\n    \"nome\": \"Renault\",\r\n    \"cnpj\":\"007883\"\r\n  },\r\n\r\n\"modelo\" : \"hatch\",\r\n\"anoFabricacao\" : 2010,\r\n\"proprietarios\": [\r\n    { \"nome\":\"Celso\",\r\n       \"idade\": 58\r\n    },\r\n     { \"nome\":\"Sandra\",\r\n       \"idade\": 50\r\n    }\r\n]\r\n}",
+					"raw": "{\r\n\"nome\" : \"Tucson\",\r\n\"ano\" : 2017,\r\n\"marca\": {\r\n    \"id\": 39\r\n    \r\n  },\r\n\r\n\"modelo\" : \"SUV\",\r\n\"anoFabricacao\" : 2016,\r\n\"proprietarios\": [\r\n    { \"nome\":\"Marina\",\r\n       \"idade\": 30\r\n           },\r\n     { \"nome\":\"Leticia\",\r\n       \"idade\": 26\r\n    }\r\n]\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -184,13 +184,13 @@
 			"response": []
 		},
 		{
-			"name": "Marcasave",
+			"name": "marcaSave",
 			"request": {
 				"method": "POST",
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n       \r\n        \"nome\": \"Toyota\",\r\n        \"cnpj\": \"48626482732\",\r\n        \"carros\": []\r\n    }",
+					"raw": "{\r\n       \r\n        \"nome\": \"Hyundai\",\r\n        \"cnpj\": \"64921638923\",\r\n        \"carros\": []\r\n    }",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -198,6 +198,15 @@
 					}
 				},
 				"url": "http://localhost:8080/api/marca/save"
+			},
+			"response": []
+		},
+		{
+			"name": "New Request",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": "http://localhost:8080/api/acessorio/delete/408"
 			},
 			"response": []
 		}
