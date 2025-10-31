@@ -1,5 +1,6 @@
 package app.service;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
@@ -30,6 +31,11 @@ public class CarroService {
                 } else {
                     return "Marca não encontrada com ID: " + carro.getMarca().getId();
                 }
+            }
+            
+         // CORREÇÃO: Garantir que a lista de acessórios não seja null
+            if (carro.getAcessorios() == null) {
+                carro.setAcessorios(new ArrayList<>());
             }
             
             this.carroRepository.save(carro);
@@ -99,6 +105,18 @@ public class CarroService {
                     // Se não veio marca, remove a associação
                     carroExistente.setMarca(null);
                 }
+                
+                
+             // CORREÇÃO: ATUALIZA OS ACESSÓRIOS
+                if (carroAtualizado.getAcessorios() != null) {
+                    // Substitui a lista de acessórios existente pela nova lista
+                    carroExistente.setAcessorios(carroAtualizado.getAcessorios());
+                } else {
+                    // Se veio null, limpa os acessórios
+                    carroExistente.setAcessorios(new ArrayList<>());
+                }
+                
+                
                 
                 // Salva as alterações
                 carroRepository.save(carroExistente);
