@@ -46,6 +46,13 @@ public class Carro {
     @JsonIgnoreProperties("carros")  // ← Evita loop sem impedir serialização
     private Marca marca;
     
+    // um carro pode ter varios acessorios
+    // um acessorio pode pertecer a varios carros
+    @ManyToMany
+    @JoinTable(name="carro_acessorio")
+    private List<Acessorio> acessorios;
+    
+    
     // um carro pode ter muitos proprietarios
     // um proprietario pode ter muitos carros
     @ManyToMany(cascade = CascadeType.ALL)
