@@ -16,33 +16,30 @@
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
--- Table structure for table `carro`
+-- Table structure for table `carro_acessorio`
 --
 
-DROP TABLE IF EXISTS `carro`;
+DROP TABLE IF EXISTS `carro_acessorio`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
-CREATE TABLE `carro` (
-  `id` bigint NOT NULL AUTO_INCREMENT,
-  `ano` int NOT NULL,
-  `nome` varchar(255) DEFAULT NULL,
-  `marca_id` bigint DEFAULT NULL,
-  `modelo` varchar(255) DEFAULT NULL,
-  `ano_fabricacao` int NOT NULL,
-  PRIMARY KEY (`id`),
-  KEY `FKrdimwbmemo9p4j5eaf6jws1ss` (`marca_id`),
-  CONSTRAINT `FKrdimwbmemo9p4j5eaf6jws1ss` FOREIGN KEY (`marca_id`) REFERENCES `marca` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=68 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+CREATE TABLE `carro_acessorio` (
+  `carro_id` bigint NOT NULL,
+  `acessorios_id` bigint NOT NULL,
+  KEY `FKpkp86yclmuj0c7mrnoyihqonm` (`acessorios_id`),
+  KEY `FK4swomvinge2sfppfkhgatdhw5` (`carro_id`),
+  CONSTRAINT `FK4swomvinge2sfppfkhgatdhw5` FOREIGN KEY (`carro_id`) REFERENCES `carro` (`id`),
+  CONSTRAINT `FKpkp86yclmuj0c7mrnoyihqonm` FOREIGN KEY (`acessorios_id`) REFERENCES `acessorio` (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `carro`
+-- Dumping data for table `carro_acessorio`
 --
 
-LOCK TABLES `carro` WRITE;
-/*!40000 ALTER TABLE `carro` DISABLE KEYS */;
-INSERT INTO `carro` VALUES (5,2010,'corolla',35,'sedan',2009),(6,2020,'nivus',32,'nivus turbo',2019),(32,2011,'Camaro',37,'hatch',2010),(43,545,'Kombi',32,'hggh',445),(44,999,'Fusca',32,'jk',99),(45,999,'Brasilia',32,'jk',99),(55,2010,'Polo',32,'sedan',2010),(56,2015,'C3',36,'HATCH',2003),(57,2020,'Compass',38,'Super',2020),(58,1982,'Uno',2,'Mille',1981),(60,2017,'Tucson',39,'SUV',2016),(62,0,'nomeFord',37,'modeloFord',0),(67,0,'k1',38,'k1',0);
-/*!40000 ALTER TABLE `carro` ENABLE KEYS */;
+LOCK TABLES `carro_acessorio` WRITE;
+/*!40000 ALTER TABLE `carro_acessorio` DISABLE KEYS */;
+INSERT INTO `carro_acessorio` VALUES (60,1),(60,4),(68,6),(68,3),(68,1),(68,5),(5,1),(5,2),(5,5),(5,9),(43,3),(58,9),(58,10),(58,2);
+/*!40000 ALTER TABLE `carro_acessorio` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
@@ -54,4 +51,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2025-10-31  9:47:28
+-- Dump completed on 2025-11-02 10:02:32

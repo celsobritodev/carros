@@ -16,30 +16,28 @@
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
--- Table structure for table `carro_proprietario`
+-- Table structure for table `marca`
 --
 
-DROP TABLE IF EXISTS `carro_proprietario`;
+DROP TABLE IF EXISTS `marca`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
-CREATE TABLE `carro_proprietario` (
-  `carro_id` bigint NOT NULL,
-  `proprietario_id` bigint NOT NULL,
-  KEY `FK2uttroqb3mg5ymj4u5q8rnfcb` (`carro_id`),
-  KEY `FKd27usmmfbi9n7d8anfu3etikf` (`proprietario_id`),
-  CONSTRAINT `FK2uttroqb3mg5ymj4u5q8rnfcb` FOREIGN KEY (`carro_id`) REFERENCES `carro` (`id`),
-  CONSTRAINT `FKd27usmmfbi9n7d8anfu3etikf` FOREIGN KEY (`proprietario_id`) REFERENCES `proprietario` (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+CREATE TABLE `marca` (
+  `id` bigint NOT NULL AUTO_INCREMENT,
+  `cnpj` varchar(255) DEFAULT NULL,
+  `nome` varchar(255) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=41 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `carro_proprietario`
+-- Dumping data for table `marca`
 --
 
-LOCK TABLES `carro_proprietario` WRITE;
-/*!40000 ALTER TABLE `carro_proprietario` DISABLE KEYS */;
-INSERT INTO `carro_proprietario` VALUES (60,7),(60,8);
-/*!40000 ALTER TABLE `carro_proprietario` ENABLE KEYS */;
+LOCK TABLES `marca` WRITE;
+/*!40000 ALTER TABLE `marca` DISABLE KEYS */;
+INSERT INTO `marca` VALUES (2,'73237510000150','Fiat'),(32,'45657676','Wolkswagen'),(35,'3433443','Toyota'),(36,'3432323444534','Citroen'),(37,'6556232323','Ford'),(38,'32239823','Jeep'),(39,'64921638923','Hyundai'),(40,'2232332232323','BYD');
+/*!40000 ALTER TABLE `marca` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
@@ -51,4 +49,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2025-10-31  9:47:27
+-- Dump completed on 2025-11-02 10:02:32
