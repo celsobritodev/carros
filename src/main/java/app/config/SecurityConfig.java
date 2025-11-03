@@ -45,6 +45,7 @@ public class SecurityConfig  {
 	        }))
 	        .authorizeHttpRequests(auth -> auth
 	            .requestMatchers("/api/login").permitAll()
+	        //    .requestMatchers("/api/carro/listAll").hasAnyRole("ADMIN") <= OUTRA FORMA DE LIBERAR ENDPOINTS
 	            .anyRequest().authenticated()
 	        )
 	        .authenticationProvider(authenticationProvider)
