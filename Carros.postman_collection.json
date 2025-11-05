@@ -2,7 +2,7 @@
 	"info": {
 		"_postman_id": "9407ee59-aa03-423b-b2b3-64300aff72b6",
 		"name": "Carros",
-		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
 		"_exporter_id": "22901965"
 	},
 	"item": [
@@ -12,6 +12,16 @@
 				"disableBodyPruning": true
 			},
 			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiJ9.eyJyb2xlIjoiVVNFUiIsIm91dHJhY29pc2EiOiJ0ZXN0ZSIsImlkIjoiMiIsInVzZXJuYW1lIjoidXNlciIsInN1YiI6InVzZXIiLCJpYXQiOjE3NjIzNDY4NTMsImV4cCI6MTc2MjM1MDQ1M30.WRdoNzXbZW5Wku7hQTPBxOlkrHaA0puJDdkd1BzoJ_4",
+							"type": "string"
+						}
+					]
+				},
 				"method": "GET",
 				"header": [],
 				"body": {
@@ -23,7 +33,62 @@
 						}
 					}
 				},
-				"url": "http://localhost:8080/api/carro/listAll"
+				"url": {
+					"raw": "http://localhost:8080/api/carro/listAll",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"carro",
+						"listAll"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "acessorioListAll",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiJ9.eyJyb2xlIjoiVVNFUiIsIm91dHJhY29pc2EiOiJ0ZXN0ZSIsImlkIjoiMiIsInVzZXJuYW1lIjoidXNlciIsInN1YiI6InVzZXIiLCJpYXQiOjE3NjIzNDY4NTMsImV4cCI6MTc2MjM1MDQ1M30.WRdoNzXbZW5Wku7hQTPBxOlkrHaA0puJDdkd1BzoJ_4",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/acessorio/listAll",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"acessorio",
+						"listAll"
+					]
+				}
 			},
 			"response": []
 		},
@@ -33,6 +98,16 @@
 				"disableBodyPruning": true
 			},
 			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiJ9.eyJyb2xlIjoiVVNFUiIsIm91dHJhY29pc2EiOiJ0ZXN0ZSIsImlkIjoiMiIsInVzZXJuYW1lIjoidXNlciIsInN1YiI6InVzZXIiLCJpYXQiOjE3NjIzNDY4NTMsImV4cCI6MTc2MjM1MDQ1M30.WRdoNzXbZW5Wku7hQTPBxOlkrHaA0puJDdkd1BzoJ_4",
+							"type": "string"
+						}
+					]
+				},
 				"method": "GET",
 				"header": [],
 				"body": {
@@ -44,7 +119,19 @@
 						}
 					}
 				},
-				"url": "http://localhost:8080/api/marca/listAll"
+				"url": {
+					"raw": "http://localhost:8080/api/marca/listAll",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"marca",
+						"listAll"
+					]
+				}
 			},
 			"response": []
 		},
@@ -54,6 +141,16 @@
 				"disableBodyPruning": true
 			},
 			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiJ9.eyJyb2xlIjoiVVNFUiIsIm91dHJhY29pc2EiOiJ0ZXN0ZSIsImlkIjoiMiIsInVzZXJuYW1lIjoidXNlciIsInN1YiI6InVzZXIiLCJpYXQiOjE3NjIzNDY4NTMsImV4cCI6MTc2MjM1MDQ1M30.WRdoNzXbZW5Wku7hQTPBxOlkrHaA0puJDdkd1BzoJ_4",
+							"type": "string"
+						}
+					]
+				},
 				"method": "GET",
 				"header": [],
 				"body": {
@@ -127,6 +224,50 @@
 			"response": []
 		},
 		{
+			"name": "findByIdAcessorio",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiJ9.eyJyb2xlIjoiVVNFUiIsIm91dHJhY29pc2EiOiJ0ZXN0ZSIsImlkIjoiMiIsInVzZXJuYW1lIjoidXNlciIsInN1YiI6InVzZXIiLCJpYXQiOjE3NjIzNDY4NTMsImV4cCI6MTc2MjM1MDQ1M30.WRdoNzXbZW5Wku7hQTPBxOlkrHaA0puJDdkd1BzoJ_4",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"nome\" : \"Jeep Compass\",\r\n    \"ano\"  : 2000,\r\n    \"modelo\" : \"SUV\"    \r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/acessorio/findById/4",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"acessorio",
+						"findById",
+						"4"
+					]
+				}
+			},
+			"response": []
+		},
+		{
 			"name": "findAcimaAnoCarro",
 			"protocolProfileBehavior": {
 				"disableBodyPruning": true
@@ -179,7 +320,48 @@
 						}
 					}
 				},
-				"url": "http://localhost:8080/api/carro/save"
+				"url": {
+					"raw": "http://localhost:8080/api/carro/save",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"carro",
+						"save"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "carroLogin",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\"username\" : \"admin\",\r\n\"password\" : \"admin\",\r\n\"role\": \"ADMIN\"\r\n  }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"login"
+					]
+				}
 			},
 			"response": []
 		},
@@ -197,7 +379,49 @@
 						}
 					}
 				},
-				"url": "http://localhost:8080/api/marca/save"
+				"url": {
+					"raw": "http://localhost:8080/api/marca/save",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"marca",
+						"save"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "acessorioSave",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n       \r\n        \"nome\": \"Retrovisor a pilha\"\r\n    }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/acessorio/save",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"acessorio",
+						"save"
+					]
+				}
 			},
 			"response": []
 		},
@@ -206,9 +430,46 @@
 			"request": {
 				"method": "DELETE",
 				"header": [],
-				"url": "http://localhost:8080/api/acessorio/delete/408"
+				"url": {
+					"raw": "http://localhost:8080/api/acessorio/delete/408",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"acessorio",
+						"delete",
+						"408"
+					]
+				}
 			},
 			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"requests": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"requests": {},
+				"exec": [
+					""
+				]
+			}
 		}
 	]
 }
