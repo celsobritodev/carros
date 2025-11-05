@@ -16,30 +16,30 @@
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
--- Table structure for table `carro_acessorio`
+-- Table structure for table `carro_proprietario`
 --
 
-DROP TABLE IF EXISTS `carro_acessorio`;
+DROP TABLE IF EXISTS `carro_proprietario`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
-CREATE TABLE `carro_acessorio` (
+CREATE TABLE `carro_proprietario` (
   `carro_id` bigint NOT NULL,
-  `acessorios_id` bigint NOT NULL,
-  KEY `FKpkp86yclmuj0c7mrnoyihqonm` (`acessorios_id`),
-  KEY `FK4swomvinge2sfppfkhgatdhw5` (`carro_id`),
-  CONSTRAINT `FK4swomvinge2sfppfkhgatdhw5` FOREIGN KEY (`carro_id`) REFERENCES `carro` (`id`),
-  CONSTRAINT `FKpkp86yclmuj0c7mrnoyihqonm` FOREIGN KEY (`acessorios_id`) REFERENCES `acessorio` (`id`)
+  `proprietario_id` bigint NOT NULL,
+  KEY `FK2uttroqb3mg5ymj4u5q8rnfcb` (`carro_id`),
+  KEY `FKd27usmmfbi9n7d8anfu3etikf` (`proprietario_id`),
+  CONSTRAINT `FK2uttroqb3mg5ymj4u5q8rnfcb` FOREIGN KEY (`carro_id`) REFERENCES `carro` (`id`),
+  CONSTRAINT `FKd27usmmfbi9n7d8anfu3etikf` FOREIGN KEY (`proprietario_id`) REFERENCES `proprietario` (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `carro_acessorio`
+-- Dumping data for table `carro_proprietario`
 --
 
-LOCK TABLES `carro_acessorio` WRITE;
-/*!40000 ALTER TABLE `carro_acessorio` DISABLE KEYS */;
-INSERT INTO `carro_acessorio` VALUES (60,1),(60,4),(68,6),(68,3),(68,1),(68,5),(5,1),(5,2),(5,5),(5,9),(43,3),(58,9),(58,10),(58,2);
-/*!40000 ALTER TABLE `carro_acessorio` ENABLE KEYS */;
+LOCK TABLES `carro_proprietario` WRITE;
+/*!40000 ALTER TABLE `carro_proprietario` DISABLE KEYS */;
+INSERT INTO `carro_proprietario` VALUES (60,7),(60,8);
+/*!40000 ALTER TABLE `carro_proprietario` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
@@ -51,4 +51,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2025-11-02 10:02:32
+-- Dump completed on 2025-11-05  8:56:00

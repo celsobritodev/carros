@@ -59,7 +59,7 @@ public class MarcaController {
 	    }
 	}
 	
-	@PreAuthorize("hasRole('USER')")
+	@PreAuthorize("hasAuthority('USER')")
 	@GetMapping("/listAll")
 	public ResponseEntity<List<Marca>> listAll() {
 		try {

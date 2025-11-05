@@ -38,7 +38,7 @@ public class AcessorioController {
 	
 	
 	// tanto ADMIN quanto USER podem salvar
-	@PreAuthorize("hasRole('ADMIN') OR hasRole('USER')")
+	@PreAuthorize("hasAuthority('ADMIN') OR hasAuthority('USER')")
 	@PostMapping("/save")
 	public ResponseEntity<String> save(@RequestBody Acessorio acessorio) {
 		

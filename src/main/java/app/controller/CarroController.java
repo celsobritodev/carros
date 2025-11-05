@@ -69,7 +69,7 @@ public class CarroController {
 	}
 	
 	
-	@PreAuthorize("hasRole('ADMIN')")
+	@PreAuthorize("hasAuthority('ADMIN')")
 	@GetMapping("/listAll")
 	public ResponseEntity<List<Carro>> listAll() {
 		try {

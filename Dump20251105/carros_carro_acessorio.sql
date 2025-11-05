@@ -16,28 +16,30 @@
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
--- Table structure for table `proprietario`
+-- Table structure for table `carro_acessorio`
 --
 
-DROP TABLE IF EXISTS `proprietario`;
+DROP TABLE IF EXISTS `carro_acessorio`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
-CREATE TABLE `proprietario` (
-  `id` bigint NOT NULL AUTO_INCREMENT,
-  `idade` bigint DEFAULT NULL,
-  `nome` varchar(255) DEFAULT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+CREATE TABLE `carro_acessorio` (
+  `carro_id` bigint NOT NULL,
+  `acessorios_id` bigint NOT NULL,
+  KEY `FKpkp86yclmuj0c7mrnoyihqonm` (`acessorios_id`),
+  KEY `FK4swomvinge2sfppfkhgatdhw5` (`carro_id`),
+  CONSTRAINT `FK4swomvinge2sfppfkhgatdhw5` FOREIGN KEY (`carro_id`) REFERENCES `carro` (`id`),
+  CONSTRAINT `FKpkp86yclmuj0c7mrnoyihqonm` FOREIGN KEY (`acessorios_id`) REFERENCES `acessorio` (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `proprietario`
+-- Dumping data for table `carro_acessorio`
 --
 
-LOCK TABLES `proprietario` WRITE;
-/*!40000 ALTER TABLE `proprietario` DISABLE KEYS */;
-INSERT INTO `proprietario` VALUES (7,30,'Marina'),(8,26,'Leticia');
-/*!40000 ALTER TABLE `proprietario` ENABLE KEYS */;
+LOCK TABLES `carro_acessorio` WRITE;
+/*!40000 ALTER TABLE `carro_acessorio` DISABLE KEYS */;
+INSERT INTO `carro_acessorio` VALUES (60,1),(60,4),(68,6),(68,3),(68,1),(68,5),(43,3),(58,9),(58,10),(58,2),(5,1),(5,2),(5,5),(5,9);
+/*!40000 ALTER TABLE `carro_acessorio` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
@@ -49,4 +51,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2025-11-02 10:02:32
+-- Dump completed on 2025-11-05  8:56:00
